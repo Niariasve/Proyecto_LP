@@ -6,3 +6,7 @@ function debug($variable) : string {
     echo "</pre>";
     exit;
 }
+
+function isPostMethod() : bool {
+    return $_SERVER['REQUEST_METHOD'] === 'POST';
+}
