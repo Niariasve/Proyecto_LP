@@ -28,3 +28,5 @@
     <input type="submit" value="Crear Cuenta">
     <input type="reset" value="Limpiar">
 </form>
+
+<a href="/">¿Ya tienes una cuenta? Inicia Sesión</a>

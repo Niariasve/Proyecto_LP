@@ -21,5 +21,8 @@ $router->post('/crear-cuenta', [LoginController::class, 'crear']);
 /* Catalogo */
 $router->get('/catalogo', [CatalogoController::class, 'index']);
 
+/* Carrito */
+$router->get('/carrito', [CatalogoController::class, 'carrito']);
+
 /* Comprobar que la ruta ingresada se válida */
 $router->comprobarRutas();
