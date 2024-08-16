@@ -1,8 +1,8 @@
 <?php 
 
-require '../includes/funciones.php';
 require '../models/Usuario.php';
 
+//Implementado por nestor arias
 class LoginController {
 
     public static function login($router) {
@@ -22,8 +22,9 @@ class LoginController {
                 $_SESSION['id'] = $usuario->id;
                 $_SESSION['correo'] = $usuario->correo;
                 $_SESSION['login'] = true;
+                $_SESSION['carrito'] = [];
 
-                debug($_SESSION);
+                header('Location: /catalogo');
             } else {
                 $mensaje = "Correo o Contraseña incorrectas";
             }
@@ -53,5 +54,11 @@ class LoginController {
         $router->render('auth/crear-cuenta', [
             "mensaje" => $mensaje
         ]);
+    }
+
+    public static function logout() {
+        session_start();
+        $_SESSION = [];
+        header('Location: /');
     }
 }

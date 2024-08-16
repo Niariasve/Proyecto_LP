@@ -31,3 +31,4 @@
 </form>
 
 <a href="/crear-cuenta">¿No tienes una cuenta? Crea una</a>
+<a href="/catalogo">Ver Catalogo</a>

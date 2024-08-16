@@ -1,5 +1,6 @@
 <?php 
 
+//implementado por nestor arias
 class Usuario {
 
     public $id;
