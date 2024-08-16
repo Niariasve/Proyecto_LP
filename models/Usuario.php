@@ -3,9 +3,6 @@
 class Usuario {
 
     public $id;
-    public $nombre;
-    public $apellido;
-    public $usuario;
     public $correo;
     public $password;
 
@@ -18,6 +15,20 @@ class Usuario {
         $this->password = $args['password'] ?? '';
     }
 
+    public function validarCuenta() {
+        if (($archivo = fopen(static::$csv, "r")) != false) {
+            while (($linea = fgetcsv($archivo, 1000, ',')) != false) {
+                if ($this->correo == $linea[1] && password_verify($this->password, $linea[2])) {
+                    $this->id = $linea[0];
+                    fclose($archivo);
+                    return true;
+                }
+            }
+        }
+        fclose($archivo);
+        return false;
+    }
+
     public function guardar() {
         $id = static::ultimoId();
         if (($archivo = fopen(static::$csv, "a")) != false) {
@@ -27,13 +38,24 @@ class Usuario {
                 $this->password,
             ]);
         }
+        fclose($archivo);
     }
 
-    public function validarUsuario() {
-
+    public function existeUsuario() : bool {
+        if (($archivo = fopen(static::$csv, "r")) != false) {
+            while (($linea = fgetcsv($archivo, 1000, ',')) != false) {
+                $correo = $linea[1];
+                if ($this->correo == $correo) {
+                    fclose($archivo);
+                    return true;
+                }
+            }
+        }
+        fclose($archivo);
+        return false;
     }
 
-    private function hashPassword() {
+    public function hashPassword() {
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
     }
 
@@ -44,6 +66,7 @@ class Usuario {
                 $id += 1;
             }
         }
+        fclose($archivo);
         return $id;
     }
 }

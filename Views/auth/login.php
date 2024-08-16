@@ -2,6 +2,8 @@
 <h1>Login</h1>
 <p>Inicia Sesión</p>
 
+<?php echo $mensaje ?? ''; ?>
+
 <form action="/" method="post">
     <div class="campo">
         <label for="fcorreo">Correo</label>

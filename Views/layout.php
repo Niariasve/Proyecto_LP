@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="src/css/style.css">
+    <title>Tienda Virtual</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
    
