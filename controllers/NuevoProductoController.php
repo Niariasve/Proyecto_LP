@@ -15,10 +15,13 @@ class NuevoProductoController {
 
             header('Location: /catalogo');
         }
-        else{
+        else if(isset($_SESSION['correo'])){
             $router->render('catalogo/publicar', [
                 "mensaje" => $mensaje
             ]);
+        }
+        else{
+            header('Location: /');
         }
     }
 }

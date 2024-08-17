@@ -22,7 +22,7 @@ class Producto
         $this->estado = $args[4] ?? '';
         $this->condicion = $args[5] ?? '';
         $this->imagen = $args[6] ?? '';
-        if(strlen($this->imagen) == 0){
+        if (strlen($this->imagen) == 0) {
             $this->imagen = 'placeholder.jpg';
         }
     }
@@ -62,5 +62,16 @@ class Producto
     public function validarVendedor($usuario): bool
     {
         return $this->usuario == $usuario;
+    }
+
+    public function __toString(): String
+    {
+        return "<div class='product'> 
+            <img src='../img/" .
+            /*hay que solucionar el acceso a /img/  */
+            static::$imagenes.$this->imagen .
+            "'> <br>" .
+            $this->titulo .
+            "</div>";
     }
 }

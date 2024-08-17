@@ -21,7 +21,7 @@
 <!-- Aqui van los productos!!! -->
 <h2>Productos</h2>
 <div class="catalogo">
-    <?php foreach($productos as $producto) { ?>
-        <!-- Aqui iria cada producto formateado -->
-    <?php } ?>
+    <?php foreach($productos as $producto) {
+        echo $producto;
+     } ?>
 </div>
