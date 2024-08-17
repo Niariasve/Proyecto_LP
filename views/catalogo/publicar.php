@@ -20,6 +20,7 @@
         id="fprecio"
         name="precio"
         placeholder="$$$"
+        step="0.01"
         required
         >
     </div>
@@ -51,11 +52,11 @@
         >
     </div>
     <div class="campo">
-        <label for="fimagen">ruta de imagen</label>
+        <label for="fimagen">imagen</label>
         <input
         id="fimagen"
         name="imagen"
-        placeholder="ruta"
+        placeholder="link de la imagen"
         >
     </div>
 

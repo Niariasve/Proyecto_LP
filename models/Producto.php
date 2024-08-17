@@ -3,7 +3,6 @@
 class Producto
 {
     public static $csv = __DIR__ . '/../csv/productos.csv';
-    public static $imagenes = __DIR__ . '/../img/';
 
     public $usuario;
     public $titulo;
@@ -22,9 +21,6 @@ class Producto
         $this->estado = $args[4] ?? '';
         $this->condicion = $args[5] ?? '';
         $this->imagen = $args[6] ?? '';
-        if (strlen($this->imagen) == 0) {
-            $this->imagen = 'placeholder.jpg';
-        }
     }
 
     public function guardar()
@@ -66,11 +62,10 @@ class Producto
 
     public function __toString(): String
     {
-        return "<div class='product'> 
+        return "<div class='tarjeta-producto'> 
             <img src='" .
-            /*hay que solucionar el acceso a /img/  */
-            static::$imagenes.$this->imagen .
-            "'> <br>" .
+            $this->imagen .
+            "' width=100 height=100> <br>" .
             $this->titulo .
             "</div>";
     }
