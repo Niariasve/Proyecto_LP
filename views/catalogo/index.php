@@ -13,6 +13,7 @@
             <?php } else { ?>
                 <p>Bienvenido, <?php echo $_SESSION['correo'] ?></p>
                 <a href="/logout">Cerrar Sesión</a>
+                <a href="/nuevo-producto">Publicar un producto</a>
                 <?php echo $_SESSION['id'] ?>
             <?php } ?>
     </div>

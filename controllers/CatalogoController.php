@@ -1,14 +1,17 @@
 <?php 
 
+require '../models/Producto.php';
+
 class CatalogoController {
 
     public static function index($router) {
-
+        $csv = __DIR__ . '/../csv/productos.csv';
         $productos = [];
-        /*
-            Aqui va la logica para enviar a los productos
-            a la vista en una lista y en el catalogo se deben iterar en un for
-        */
+        $lineas = file($csv, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        foreach($lineas as $linea){
+            $atributos = str_getcsv($linea);
+            $productos[] = new Producto($atributos);
+        }
         
         $router->render('catalogo/index', [
             "productos" => $productos
