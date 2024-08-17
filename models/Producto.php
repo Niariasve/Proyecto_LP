@@ -67,7 +67,7 @@ class Producto
     public function __toString(): String
     {
         return "<div class='product'> 
-            <img src='../img/" .
+            <img src='" .
             /*hay que solucionar el acceso a /img/  */
             static::$imagenes.$this->imagen .
             "'> <br>" .
