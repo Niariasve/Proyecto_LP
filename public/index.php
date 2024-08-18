@@ -5,6 +5,7 @@ require __DIR__ . '/../includes/funciones.php';
 require __DIR__ . '/../controllers/LoginController.php';
 require __DIR__ . '/../controllers/CatalogoController.php';
 require __DIR__ . '/../controllers/NuevoProductoController.php';
+require __DIR__ . '/../controllers/VistaProductoController.php';
 
 $router = new Router();
 
@@ -28,6 +29,9 @@ $router->post('/nuevo-producto', [NuevoProductoController::class, 'publicar']);
 
 /* Carrito */
 $router->get('/carrito', [CatalogoController::class, 'carrito']);
+
+/* Pagina del producto */
+$router->get('/vista-producto/{id}', [VistaProductoController::class, 'mostrar']);
 
 /* Comprobar que la ruta ingresada se válida */
 $router->comprobarRutas();
