@@ -62,7 +62,8 @@ class Producto
 
     public function __toString(): String
     {
-        return "<div class='tarjeta-producto'> 
+        $id = md5($this->usuario.$this->titulo);
+        return "<div class='tarjeta-producto' onclick=window.location.href='/vista-producto/".$id."'>  
             <img src='" .
             $this->imagen .
             "' width=100 height=100> <br>" .
