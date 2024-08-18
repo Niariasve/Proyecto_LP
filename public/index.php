@@ -31,7 +31,7 @@ $router->post('/nuevo-producto', [NuevoProductoController::class, 'publicar']);
 $router->get('/carrito', [CatalogoController::class, 'carrito']);
 
 /* Pagina del producto */
-$router->get('/vista-producto/${id}', [VistaProductoController::class, 'mostrar']);
+$router->get('/vista-producto/{id}', [VistaProductoController::class, 'mostrar']);
 
 /* Comprobar que la ruta ingresada se válida */
 $router->comprobarRutas();
