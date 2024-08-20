@@ -35,6 +35,10 @@ $router->get('/vista-producto/', [VistaProductoController::class, 'mostrar']);
 
 /* Manipulacion de productos */
 $router->post('/vista-producto/eliminar-producto', [VistaProductoController::class, 'eliminar']);
+$router->post('/vista-producto/editar-producto', [VistaProductoController::class, 'editar']);
+
+/* Editor de producto */
+$router->post('/editor/guardar-cambios', [VistaProductoController::class, 'guardarCambios']);
 
 /* Comprobar que la ruta ingresada se válida */
 $router->comprobarRutas();
