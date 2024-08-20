@@ -11,9 +11,14 @@
 <?php
 if ($_SESSION['correo'] == $producto->usuario) {
     echo "<form id=eliminarForm action='eliminar-producto' method=post>
-    <input type=hidden name=producto value=" . urlencode(json_encode($producto)) . ">
-    <button type=button onclick=showConfirmation()>Eliminar producto</button>
-</form>";
+        <input type=hidden name=producto value=" . urlencode(json_encode($producto)) . ">
+        <button type=button onclick=showConfirmation('eliminarForm')>Eliminar producto</button>
+        </form>
+        <form id=editarForm action='editar-producto' method=post>
+        <input type=hidden name=producto value=" . urlencode(json_encode($producto)) . ">
+        <input type='submit' value='Editar producto'>
+        </form>"
+        ;
 }
 ?>
 <br>

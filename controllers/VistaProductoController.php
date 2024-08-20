@@ -33,4 +33,15 @@ class VistaProductoController
         $producto->eliminar();
         header('Location: /catalogo');
     }
+    public static function editar($router){
+        $objeto = json_decode(urldecode($_POST['producto']), true);
+        $argumentos = [];
+        foreach($objeto as $atributo){
+            $argumentos[] = $atributo;
+        }
+        $producto = new Producto($argumentos);
+        $router->render('catalogo/editor', [
+            "producto" => $producto
+        ]);
+    }
 }
