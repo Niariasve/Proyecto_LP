@@ -33,5 +33,8 @@ $router->get('/carrito', [CatalogoController::class, 'carrito']);
 /* Pagina del producto */
 $router->get('/vista-producto/', [VistaProductoController::class, 'mostrar']);
 
+/* Manipulacion de productos */
+$router->post('/vista-producto/eliminar-producto', [VistaProductoController::class, 'eliminar']);
+
 /* Comprobar que la ruta ingresada se válida */
 $router->comprobarRutas();
