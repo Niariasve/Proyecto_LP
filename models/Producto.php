@@ -16,7 +16,7 @@ class Producto
     {
         $this->usuario = $args[0] ?? '';
         $this->titulo = $args[1] ?? '';
-        $this->precio = $args[2] ?? null;
+        $this->precio = $args[2] ?? 0;
         $this->descripcion = $args[3] ?? '';
         $this->estado = $args[4] ?? '';
         $this->condicion = $args[5] ?? '';
@@ -50,7 +50,7 @@ class Producto
             $this->imagen;
         $lineas = file(static::$csv, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         $filteredLines = array_filter($lineas, function ($linea) use ($articulo) {
-            return trim($linea) !== $articulo;
+            return trim(str_replace('"', '', $linea)) != trim($articulo);
         });
         file_put_contents(static::$csv, implode(PHP_EOL, $filteredLines) . PHP_EOL);
     }

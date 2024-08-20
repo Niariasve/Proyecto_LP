@@ -23,4 +23,14 @@ class VistaProductoController
             "producto" => $producto
         ]);
     }
+    public static function eliminar($router){
+        $objeto = json_decode(urldecode($_POST['producto']), true);
+        $argumentos = [];
+        foreach($objeto as $atributo){
+            $argumentos[] = $atributo;
+        }
+        $producto = new Producto($argumentos);
+        $producto->eliminar();
+        header('Location: /catalogo');
+    }
 }
