@@ -38,7 +38,7 @@ $router->post('/vista-producto/eliminar-producto', [VistaProductoController::cla
 $router->post('/vista-producto/editar-producto', [VistaProductoController::class, 'editar']);
 
 /* Editor de producto */
-$router->post('/editor/guardar-cambios', [VistaProductoController::class, 'guardarCambios']);
+$router->post('/editor/guardar-cambios', [EditorController::class, 'guardarCambios']);
 
 /* Comprobar que la ruta ingresada se válida */
 $router->comprobarRutas();
