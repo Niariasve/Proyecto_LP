@@ -6,6 +6,7 @@ require __DIR__ . '/../controllers/LoginController.php';
 require __DIR__ . '/../controllers/CatalogoController.php';
 require __DIR__ . '/../controllers/NuevoProductoController.php';
 require __DIR__ . '/../controllers/VistaProductoController.php';
+require __DIR__ . '/../controllers/EditorController.php';
 
 $router = new Router();
 
@@ -38,7 +39,7 @@ $router->post('/vista-producto/eliminar-producto', [VistaProductoController::cla
 $router->post('/vista-producto/editar-producto', [VistaProductoController::class, 'editar']);
 
 /* Editor de producto */
-$router->post('/editor/guardar-cambios', [EditorController::class, 'guardarCambios']);
+$router->post('/guardar-cambios', [EditorController::class, 'guardarCambios']);
 
 /* Comprobar que la ruta ingresada se válida */
 $router->comprobarRutas();

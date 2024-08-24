@@ -60,10 +60,13 @@ class Producto
         return $this->usuario == $usuario;
     }
 
+    public function getId(): String{
+        return md5($this->usuario.$this->titulo);
+    }
+
     public function __toString(): String
     {
-        $id = md5($this->usuario.$this->titulo);
-        return "<div class='tarjeta-producto' onclick=window.location.href='/vista-producto/?id=".$id."'>  
+        return "<div class='tarjeta-producto' onclick=window.location.href='/vista-producto/?id=".$this->getId()."'>  
             <img src='" .
             $this->imagen .
             "' width=100 height=100> <br>" .

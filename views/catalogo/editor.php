@@ -60,4 +60,4 @@
     <input type="submit" value="Actualizar producto">
 </form>
 
-<a href="/vista-producto/?id=<?php echo md5($producto->usuario . $producto->titulo); ?>">Cancelar</a>
+<a href="/vista-producto/?id=<?php echo $producto->getId(); ?>">Cancelar</a>
