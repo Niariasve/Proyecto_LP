@@ -60,17 +60,23 @@ class Producto
         return $this->usuario == $usuario;
     }
 
-    public function getId(): String{
-        return md5($this->usuario.$this->titulo);
+    public function getId(): String
+    {
+        return md5($this->usuario . $this->titulo);
     }
 
     public function __toString(): String
     {
-        return "<div class='tarjeta-producto' onclick=window.location.href='/vista-producto/?id=".$this->getId()."'>  
+        return "<div class='tarjeta-producto' onclick=window.location.href='/vista-producto/?id=" . $this->getId() . "'>  
             <img src='" .
             $this->imagen .
-            "' width=100 height=100> <br>" .
+            "' class='imagen-tarjeta'><br>
+            <div class='titulo-tarjeta'>" .
             $this->titulo .
-            "</div>";
+            "</div>
+            <div class='precio-tarjeta'>
+            $" . $this->precio .
+            "</div>
+            </div>";
     }
 }
