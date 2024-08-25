@@ -79,4 +79,16 @@ class Producto
             "</div>
             </div>";
     }
+
+    public static function getProducto($id) {
+        if (($archivo = fopen(static::$csv, 'r')) != false) {
+            while(($linea = fgetcsv($archivo, 1000, ',')) != false) {
+                $producto = new Producto($linea);
+                if ($producto->getId() == $id) {
+                    return $producto;
+                }
+            }
+        }
+        return null;
+    }
 }

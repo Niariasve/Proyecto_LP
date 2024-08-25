@@ -7,6 +7,10 @@ class LoginController {
 
     public static function login($router) {
 
+        if (isset($_SESSION['login'])) {
+            header('Location: /catalogo');
+        }
+
         $mensaje = '';
 
         if (count($_GET) > 0) {

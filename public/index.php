@@ -23,6 +23,8 @@ $router->post('/crear-cuenta', [LoginController::class, 'crear']);
 
 /* Catalogo */
 $router->get('/catalogo', [CatalogoController::class, 'index']);
+$router->get('/añadir-producto', [CatalogoController::class, 'add']);
+$router->get('/sacar-producto', [CatalogoController::class, 'remove']);
 
 /* Nuevo articulo */
 $router->get('/nuevo-producto', [NuevoProductoController::class, 'publicar']);
