@@ -1,3 +1,10 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 10;
+    padding: 10;
+    line-height: 1.6;
+}
+
 .catalogo {
     display: flex;
     flex-direction: row;
