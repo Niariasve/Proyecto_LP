@@ -8,9 +8,15 @@ class EditorController
     {
         $objeto = json_decode(urldecode($_POST['antiguo']), true);
         $argumentos = [];
-        foreach ($objeto as $atributo) {
-            $argumentos[] = $atributo;
-        }
+        
+        $argumentos[] = $objeto['usuario'];
+        $argumentos[] = $objeto['titulo'];
+        $argumentos[] = $objeto['precio'];
+        $argumentos[] = $objeto['descripcion'];
+        $argumentos[] = $objeto['condicion'];
+        $argumentos[] = $objeto['estado'];
+        $argumentos[] = $objeto['imagen'];
+
         $antiguo = new Producto($argumentos);
         unset($_POST['antiguo']);
         $atributos = [$_SESSION['correo']];
@@ -18,8 +24,8 @@ class EditorController
             $atributos[] = $atributo;
         }
         $nuevo = new Producto($atributos);
-        $nuevo->guardar();
         $antiguo->eliminar();
+        $nuevo->guardar();
 
         header("Location: /vista-producto/?id=".$nuevo->getId());
     }

@@ -26,9 +26,15 @@ class VistaProductoController
     public static function eliminar($router){
         $objeto = json_decode(urldecode($_POST['producto']), true);
         $argumentos = [];
-        foreach($objeto as $atributo){
-            $argumentos[] = $atributo;
-        }
+        
+        $argumentos[] = $objeto['usuario'];
+        $argumentos[] = $objeto['titulo'];
+        $argumentos[] = $objeto['precio'];
+        $argumentos[] = $objeto['descripcion'];
+        $argumentos[] = $objeto['condicion'];
+        $argumentos[] = $objeto['estado'];
+        $argumentos[] = $objeto['imagen'];
+
         $producto = new Producto($argumentos);
         $producto->eliminar();
         header('Location: /catalogo');
@@ -36,9 +42,15 @@ class VistaProductoController
     public static function editar($router){
         $objeto = json_decode(urldecode($_POST['producto']), true);
         $argumentos = [];
-        foreach($objeto as $atributo){
-            $argumentos[] = $atributo;
-        }
+        
+        $argumentos[] = $objeto['usuario'];
+        $argumentos[] = $objeto['titulo'];
+        $argumentos[] = $objeto['precio'];
+        $argumentos[] = $objeto['descripcion'];
+        $argumentos[] = $objeto['condicion'];
+        $argumentos[] = $objeto['estado'];
+        $argumentos[] = $objeto['imagen'];
+
         $producto = new Producto($argumentos);
         $router->render('catalogo/editor', [
             "producto" => $producto
