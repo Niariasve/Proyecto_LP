@@ -36,6 +36,6 @@ if (isset($_SESSION['login'])) {
 <br>
 <h2>Precio: <?php echo $producto->precio; ?> </h2>
 <h2>Descripcion: <?php echo $producto->descripcion; ?> </h2>
-<h2>Estado: <?php echo $producto->estado; ?> </h2>
 <h2>Condicion: <?php echo $producto->condicion; ?> </h2>
+<h2>Estado: <?php echo $producto->estado; ?> </h2>
 <h2>Vendedor: <?php echo $producto->usuario; ?> </h2>

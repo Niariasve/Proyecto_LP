@@ -18,8 +18,8 @@ class Producto
         $this->titulo = $args[1] ?? '';
         $this->precio = $args[2] ?? 0;
         $this->descripcion = $args[3] ?? '';
-        $this->estado = $args[4] ?? '';
-        $this->condicion = $args[5] ?? '';
+        $this->condicion = $args[4] ?? '';
+        $this->estado = $args[5] ?? '';
         $this->imagen = $args[6] ?? '';
     }
 
@@ -31,8 +31,8 @@ class Producto
                 $this->titulo,
                 $this->precio,
                 $this->descripcion,
-                $this->estado,
                 $this->condicion,
+                $this->estado,
                 $this->imagen
             ]);
         }
@@ -45,12 +45,12 @@ class Producto
             $this->titulo . "," .
             $this->precio . "," .
             $this->descripcion . "," .
-            $this->estado . "," .
             $this->condicion . "," .
+            $this->estado . "," .
             $this->imagen;
         $lineas = file(static::$csv, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         $filteredLines = array_filter($lineas, function ($linea) use ($articulo) {
-            return trim(str_replace('"', '', $linea)) != trim($articulo);
+            return trim(str_replace('"', '', $linea)) != trim(str_replace('"', '', $articulo));
         });
         file_put_contents(static::$csv, implode(PHP_EOL, $filteredLines) . PHP_EOL);
     }
