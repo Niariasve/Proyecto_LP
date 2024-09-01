@@ -253,3 +253,84 @@ body {
     width: fit-content;
     margin: 0 auto;
 }
+
+.contenedor-producto {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.contenedor-producto-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.imagen-producto {
+    border-radius: 10px;
+    height: 400px;
+    width: 400px;
+}
+
+.herramientas-vendedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.info-producto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.titulo-producto {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.precio-producto {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.subtitulo {
+    font-weight: bold;
+}
+
+.descripcion-producto {
+    display: flex;
+    margin: 0px;
+    height: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 3;
+    background-color: #e6e6e6;
+    width: 100%;
+}
+
+.contenedor-info-misc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contenedor-condicion, .contenedor-estado, .contenedor-vendedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 1;
+}
