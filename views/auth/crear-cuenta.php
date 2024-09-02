@@ -1,11 +1,11 @@
-<h1>Crear una cuenta</h1>
-<p>Crea una cuenta</p>
+<h1 class="titulo-pagina">Crear una cuenta</h1>
+<p class="descripcion-pagina">Crea una cuenta</p>
 
 <?php echo $mensaje ?? ''; ?>
 
-<form action="/crear-cuenta" method="post">
+<form class="contenedor-form" action="/crear-cuenta" method="post">
     <div class="campo">
-        <label for="fcorreo">Correo</label>
+        <label class="campo-titulo" for="fcorreo">Correo</label>
         <input 
         type="mail"
         id="fcorreo"
@@ -15,7 +15,7 @@
         >
     </div>
     <div class="campo">
-        <label for="fpassword">Contraseña</label>
+        <label class="campo-titulo" for="fpassword">Contraseña</label>
         <input 
         type="mail"
         id="fpassword"
@@ -25,8 +25,9 @@
         >
     </div>
 
-    <input type="submit" value="Crear Cuenta">
-    <input type="reset" value="Limpiar">
+    <div class="botones">
+        <input class="boton-negro" type="submit" value="Crear Cuenta">
+        <input class="boton-negro" type="reset" value="Limpiar">
+    </div>
+    <a href="/">¿Ya tienes una cuenta? Inicia Sesión</a>
 </form>
-
-<a href="/">¿Ya tienes una cuenta? Inicia Sesión</a>

@@ -3,8 +3,9 @@ include __DIR__ . '/../templates/nav.php';
 $index = 0;
 ?>
 
-<h1>Mi Carrito</h1>
-<p>Mis productos</p>
+<h1 class="titulo-pagina">Mi Carrito</h1>
+<p class="descripcion-pagina">Mis productos</p>
+
 
 <div class="contenedor-catalogo">
     <table class="carrito">
@@ -18,7 +19,6 @@ $index = 0;
             <tr>
                 <td>
                     <div class="producto-carrito">
-                        <?php echo $index ?>
                         <p class="producto-titulo"><?php echo $producto->titulo ?></p>
                         <p class="producto-descripcion"><?php echo $producto->descripcion ?></p>
                     </div>
@@ -39,7 +39,7 @@ $index = 0;
                 <td class="boton-eliminar">
                     <form action="catalogo/eliminar" method="post">
                         <input type="hidden" name="id" value="<?php echo $producto->id ?>">
-                        <input type="submit" value="Eliminar">
+                        <input class="" type="submit" value="Eliminar">
                     </form>
                 </td>
             </tr>
@@ -62,5 +62,8 @@ $index = 0;
     </div>
 </div>
 
+<?php if(empty($productos)) { ?>
+    <p class="descripcion-pagina">Parece que no hay ningun elemento en tu carrito</p>
+<?php } ?>
 
 <script src="/js/app.js"></script>

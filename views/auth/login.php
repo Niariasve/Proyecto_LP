@@ -1,12 +1,12 @@
 <!-- Login: Néstor Arias -->
-<h1>Login</h1>
-<p>Inicia Sesión</p>
+<h1 class="titulo-pagina">Login</h1>
+<p class="descripcion-pagina">Inicia Sesión</p>
 
 <?php echo $mensaje ?? ''; ?>
 
-<form action="/" method="post">
+<form class="contenedor-form" action="/" method="post">
     <div class="campo">
-        <label for="fcorreo">Correo</label>
+        <label class="campo-titulo" for="fcorreo">Correo</label>
         <input
         type="mail" 
         id="fcorreo" 
@@ -17,7 +17,7 @@
     </div>
 
     <div class="campo">
-        <label for="fpassword">Password</label>
+        <label class="campo-titulo" for="fpassword">Password</label>
         <input 
         type="text" 
         id="fpassword" 
@@ -27,8 +27,9 @@
         >
     </div>
 
-    <input type="submit" value="Iniciar Sesión">
+    <input class="boton-negro" type="submit" value="Iniciar Sesión">
+    <div class="botones">
+        <a href="/crear-cuenta">¿No tienes una cuenta? Crea una</a>
+        <a href="/catalogo">Ver Catalogo</a>
+    </div>
 </form>
-
-<a href="/crear-cuenta">¿No tienes una cuenta? Crea una</a>
-<a href="/catalogo">Ver Catalogo</a>

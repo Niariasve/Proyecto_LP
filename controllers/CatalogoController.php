@@ -19,6 +19,9 @@ class CatalogoController {
     }
 
     public static function carrito($router) {
+        if(!isset($_SESSION['login'])) {
+            header('Location: /');
+        }
         
         $productos = $_SESSION['carrito'];
 

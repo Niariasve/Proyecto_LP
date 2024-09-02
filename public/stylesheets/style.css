@@ -73,6 +73,7 @@ body {
     transition: background-color 0.3s;
     border: none;
     box-shadow: none;
+    margin-bottom: 5px;
 }
 
 .boton-negro:hover, .publicar-editar-boton:hover .boton-cancelar:hover {
@@ -93,6 +94,7 @@ body {
 
 .campo-titulo, .campo-precio{
     margin-bottom: 10px;
+    padding: 5px;
     border: none;
     border-radius: 8px;
     box-shadow: none;
@@ -188,6 +190,7 @@ body {
 }
 
 .carrito tr {
+    height: 10px;
     border-bottom: 5px solid gray;
 }
 
@@ -209,7 +212,21 @@ body {
     align-items: center;
 }
 
+.boton-eliminar input {
+    padding: 10px;
+    width: 100px;
+    border: none;
+    background-color: #2c2c2c;
+    color: white;
+    border-radius: 15px;
+}
 
+.boton-eliminar input:hover {
+    background-color: #555555;
+    cursor: pointer;
+}
+
+rgb(75, 75, 75)
 .producto-carrito {
     display:flex;
     flex-direction:column;
@@ -333,4 +350,50 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     flex: 1;
+}
+
+.contenedor {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.campo input {
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.boton {
+    padding: 10px;
+    display: block;
+    width: fit-content;
+    border-radius: 15px;
+    background-color: rgb(43, 43, 43);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border: none;
+}
+
+.titulo-pagina {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.descripcion-pagina {
+    font-size: 20px;
+    text-align: center;
 }
