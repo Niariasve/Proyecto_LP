@@ -9,14 +9,14 @@ $index = 0;
 
 <div class="contenedor-catalogo">
     <table class="carrito">
-        <tr>
+        <tr class="header-row">
             <th>Producto</th>
             <th>Precio</th>
             <th>Cantidad</th>
             <th>Total</th>
         </tr>
         <?php foreach($productos as $key => $producto) { ?>
-            <tr>
+            <tr class="data-row">
                 <td>
                     <div class="producto-carrito">
                         <p class="producto-titulo"><?php echo $producto->titulo ?></p>
@@ -37,9 +37,9 @@ $index = 0;
                     <p class="producto-total"><?php echo $producto->precio ?></p>
                 </td>
                 <td class="boton-eliminar">
-                    <form action="catalogo/eliminar" method="post">
-                        <input type="hidden" name="id" value="<?php echo $producto->id ?>">
-                        <input class="" type="submit" value="Eliminar">
+                    <form action="carrito/eliminar" method="post">
+                        <input type="hidden" name="id" value="<?php echo $producto->getId() ?>">
+                        <input type="submit" value="Eliminar">
                     </form>
                 </td>
             </tr>
@@ -53,12 +53,13 @@ $index = 0;
         </div>
         <div class="resumen-item">
             <p>Subtotal:</p>
-            <p class="producto-subtotal">$123</p> 
+            <p class="producto-subtotal">0</p> 
         </div>
         <div class="resumen-item">
             <p>Total:</p>
             <p class="total">0</p>
         </div>
+        <button class="boton-negro">Comprar</button>
     </div>
 </div>
 

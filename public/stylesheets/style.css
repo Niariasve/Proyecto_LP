@@ -1,7 +1,5 @@
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 10;
-    padding: 10;
     line-height: 1.6;
 }
 
@@ -186,17 +184,16 @@ body {
 /* Carrito */
 
 .carrito {
+    height: fit-content;
     border-collapse: collapse;
 }
 
-.carrito tr {
-    height: 10px;
-    border-bottom: 5px solid gray;
+.data-row {
+    border-bottom: 3px solid gray;
 }
 
-
-
-.carrito th {
+.header-row {
+    height: 10px;
     text-align: left;
 }
 
@@ -226,7 +223,6 @@ body {
     cursor: pointer;
 }
 
-rgb(75, 75, 75)
 .producto-carrito {
     display:flex;
     flex-direction:column;

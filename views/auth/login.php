@@ -2,7 +2,7 @@
 <h1 class="titulo-pagina">Login</h1>
 <p class="descripcion-pagina">Inicia Sesión</p>
 
-<?php echo $mensaje ?? ''; ?>
+<?php echo "<p class='descripcion-pagina'>$mensaje</p>" ?? ''; ?>
 
 <form class="contenedor-form" action="/" method="post">
     <div class="campo">

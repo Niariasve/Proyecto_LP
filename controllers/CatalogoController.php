@@ -47,4 +47,9 @@ class CatalogoController {
             header('Location: /catalogo');      
         }
     }
+
+    public static function eliminar() {
+        unset($_SESSION['carrito'][$_POST['id']]);
+        header('Location: /carrito');
+    }
 }

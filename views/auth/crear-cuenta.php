@@ -1,7 +1,7 @@
 <h1 class="titulo-pagina">Crear una cuenta</h1>
 <p class="descripcion-pagina">Crea una cuenta</p>
 
-<?php echo $mensaje ?? ''; ?>
+<?php echo "<p class='descripcion-pagina'>$mensaje</p>" ?? ''; ?>
 
 <form class="contenedor-form" action="/crear-cuenta" method="post">
     <div class="campo">

@@ -32,6 +32,7 @@ $router->post('/nuevo-producto', [NuevoProductoController::class, 'publicar']);
 
 /* Carrito */
 $router->get('/carrito', [CatalogoController::class, 'carrito']);
+$router->post('/carrito/eliminar', [CatalogoController::class, 'eliminar']);
 
 /* Pagina del producto */
 $router->get('/vista-producto/', [VistaProductoController::class, 'mostrar']);
