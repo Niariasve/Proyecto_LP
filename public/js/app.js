@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function iniciarApp() {
     actualizarCarrito();
     asginarOperaciones();
+    comprar();
 }
 
 function actualizarCarrito() {
@@ -83,4 +84,11 @@ function calcularTotal() {
     })
 
     valorTotalHTML.innerHTML = valorTotal + valorTotal * 0.12;
+}
+
+function comprar() {
+    const comprar = document.getElementById('comprar');
+    comprar.addEventListener('click', () => {
+        alert('La compra se ha realizado correctamente');
+    });
 }

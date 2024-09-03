@@ -59,7 +59,7 @@ $index = 0;
             <p>Total:</p>
             <p class="total">0</p>
         </div>
-        <button class="boton-negro">Comprar</button>
+        <button id="comprar" class="boton-negro">Comprar</button>
     </div>
 </div>
 
