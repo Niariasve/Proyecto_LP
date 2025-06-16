@@ -4,7 +4,7 @@
 class EditorController
 {
 
-    public static function guardarCambios($router)
+    public static function guardarCambios()
     {
         $objeto = json_decode(urldecode($_POST['antiguo']), true);
         $argumentos = [];
