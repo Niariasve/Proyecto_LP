@@ -13,7 +13,7 @@ class LoginController {
 
         $mensaje = '';
 
-        if (count($_GET) > 0) {
+        if (!empty($_GET)) {
             $mensaje = 'Su cuenta ha sido creada correctamente puede iniciar sesión';
         }
         
