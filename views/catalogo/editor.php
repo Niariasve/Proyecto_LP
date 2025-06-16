@@ -48,20 +48,20 @@
             <div class="condicion-dropdown">
                 Condición
                 <select id='fcondicion' name="condicion" required">
-                    <option value="Nuevo" <?php if($producto->condicion == "Nuevo") echo "selected";?>>Nuevo</option>
-                    <option value="Sellado" <?php if($producto->condicion == "Sellado") echo "selected";?>>Sellado</option>
-                    <option value="Usado - como nuevo" <?php if($producto->condicion == "Usado - como nuevo") echo "selected";?>>Usado - como nuevo</option>
-                    <option value="Usado" <?php if($producto->condicion == "Usado") echo "selected";?>>Usado</option>
+                    <option value="Nuevo" <?= $producto->condicion == "Nuevo" ? 'selected' : '' ?>>Nuevo</option>
+                    <option value="Sellado" <?= $producto->condicion == "Sellado" ? 'selected' : '' ?>>Sellado</option>
+                    <option value="Usado - como nuevo" <?= $producto->condicion == "Usado - como nuevo" ? 'selected' : '' ?>>Usado - como nuevo</option>
+                    <option value="Usado" <?= $producto->condicion == "Usado" ? 'selected' : '' ?>>Usado</option>
                 </select>
             </div>
             <div class="estado-dropdown">
                 Estado
                 <select id='festado' name="estado" required >
-                    <option value="Excelente" <?php if($producto->estado == "Excelente") echo "selected";?> >Excelente</option>
-                    <option value="Bueno" <?php if($producto->estado == "Bueno") echo "selected";?> >Bueno</option>
-                    <option value="Decente" <?php if($producto->estado == "Decente") echo "selected";?> >Decente</option>
-                    <option value="Malo - funciona" <?php if($producto->estado == "Malo - funciona") echo "selected";?> >Malo - funciona</option>
-                    <option value="Malo - no funciona" <?php if($producto->estado == "Malo - no funciona") echo "selected";?> >Malo - no funciona</option>
+                    <option value="Excelente" <?= $producto->estado == "Excelente" ? 'selected' : '' ?> >Excelente</option>
+                    <option value="Bueno" <?= $producto->estado == "Bueno" ? 'selected' : '' ?> >Bueno</option>
+                    <option value="Decente" <?= $producto->estado == "Decente" ? 'selected' : '' ?> >Decente</option>
+                    <option value="Malo - funciona" <?= $producto->estado == "Malo - funciona" ? 'selected' : '' ?> >Malo - funciona</option>
+                    <option value="Malo - no funciona" <?= $producto->estado == "Malo - no funciona" ? 'selected' : '' ?> >Malo - no funciona</option>
                 </select>
             </div>
         </div>
