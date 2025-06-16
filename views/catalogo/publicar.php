@@ -1,5 +1,5 @@
 <div>
-    <?php include __DIR__ . '/../templates/nav.php'; ?>
+    <?php include_once __DIR__ . '/../templates/nav.php'; ?>
 </div>
 <div class='contenedor-form'>
     <form action="/nuevo-producto" method="post">
